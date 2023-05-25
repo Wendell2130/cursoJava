@@ -1,6 +1,7 @@
 package dataEhora;
 
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
@@ -30,8 +31,13 @@ public class App {
 		dateTime=exitDate+":"+exitTime;
 		LocalDateTime exit=LocalDateTime.parse(dateTime,form);
 		
+		
+		Duration d1=Duration.between(entry, exit);
 		System.out.println(entry);
+		System.out.println(entry.format(form));
 		System.out.println(exit);
+		System.out.println(exit.format(form));
+		System.out.println("Duração:"+d1.abs().toHours()+" horas e "+d1.toMinutesPart()+" minutos.");
 		
 	}
 
